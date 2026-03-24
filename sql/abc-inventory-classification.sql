@@ -1,5 +1,4 @@
-/* BUSINESS QUESTION:
-NAME: abc-inventory-classification.sql
+/* NAME: abc-inventory-classification.sql
 PURPOSE: to classify olist products into A,B,C tiers based on their revenuer contribution to prioritize inventory and marketing efforts
 RUBRIC REQUIREMENTS
  - Defines a specific, actionable question and a multi-step analytical strategy
