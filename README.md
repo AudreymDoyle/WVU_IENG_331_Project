@@ -50,6 +50,7 @@ This section outlines four specific business questions investigated using well-s
 - For this analysis we identified the first purchase for each customer, computed the time between orders, and changed the results to calculate retention rates.
 - We used chained CTEs to isolate cohorts by their initial purchase month.
 
+- We considered using correlated subqueries to find the first purchase date for each customer, but opted for chained CTEs to improve readability and ensure the logic was modular enough for the Milestone 2 Python refactor.
 
 ### B. Seller Performance Scorecard
 
@@ -57,6 +58,7 @@ This section outlines four specific business questions investigated using well-s
 
 - We used a composite score was created by joining four or more tables to aggregate revenue, on-time delivery rates, and average review scores. This requires separate CTEs for each metric before combining them into a final ranking.
 
+- We considered joining all tables in one large statement, but chose separate aggregation CTEs for revenue, delivery, and reviews to prevent data fan-out and ensure our averages remained mathematically accurate.
 
 ### C. ABC Inventory Classification
 
@@ -64,6 +66,7 @@ This section outlines four specific business questions investigated using well-s
 
 - The products are classified into A, B, and C tiers based on pareto principles. We utilized window functions to calculate running totals and percentages for the tier assignments.
 
+- We considered classifying items by the number of units sold, but ultimately chose revenue because it better reflects the financial impact of inventory according to the Pareto principle.
 
 ### D. Geographic Delivery Analysis
 
@@ -71,6 +74,7 @@ This section outlines four specific business questions investigated using well-s
 
 - This query compares actual vs. estimated delivery dates across different customer regions by joining the order data with geolocation records. This involved date arithmetic, complex joins, and regional aggregation.
 
+- We initially looked at just the total days to deliver, but realized that comparing "Actual vs. Estimated" provided more business value by highlighting where the Olist logistics platform consistently over-promises to customers.
 
 ---
 
