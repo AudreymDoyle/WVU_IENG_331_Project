@@ -12,7 +12,6 @@ This milestone involved building a data product using the Olist dataset, which c
 Course Professor: Ozan Ozbeker
 Institution: West Virginia University
 
-Group 7
 - Audrey Doyle
 - Ian Donnen
 - Rylee Lindermuth
